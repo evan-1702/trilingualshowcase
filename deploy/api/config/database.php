@@ -122,7 +122,8 @@ class Database {
         $stmt = $db->prepare("SELECT COUNT(*) FROM users WHERE username = ?");
         $stmt->execute(['admin']);
         if ($stmt->fetchColumn() == 0) {
-            $hashedPassword = password_hash('admin123', PASSWORD_ARGON2ID);
+            // Use bcrypt for compatibility with Node.js bcrypt
+            $hashedPassword = password_hash('admin123', PASSWORD_BCRYPT);
             $stmt = $db->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
             $stmt->execute(['admin', $hashedPassword]);
         }

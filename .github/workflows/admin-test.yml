@@ -1,0 +1,49 @@
+name: Test Administration
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 */6 * * *'  # Tests toutes les 6 heures
+
+jobs:
+  test-admin:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.3'
+        extensions: pdo, pdo_pgsql, pgsql
+    
+    - name: Setup PostgreSQL
+      uses: harmon758/postgresql-action@v1
+      with:
+        postgresql version: '13'
+        postgresql db: 'petparadise'
+        postgresql user: 'postgres'
+        postgresql password: 'postgres'
+    
+    - name: Run Admin Tests
+      run: |
+        export PGHOST=localhost
+        export PGPORT=5432
+        export PGDATABASE=petparadise
+        export PGUSER=postgres
+        export PGPASSWORD=postgres
+        php tests/AdminTest.php
+    
+    - name: Fix Admin if needed
+      if: failure()
+      run: |
+        export PGHOST=localhost
+        export PGPORT=5432
+        export PGDATABASE=petparadise
+        export PGUSER=postgres
+        export PGPASSWORD=postgres
+        php -r 'require_once "tests/AdminTest.php"; fixAdminAccess();'
