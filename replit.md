@@ -123,3 +123,29 @@ The application is designed to work with standard shared hosting providers:
 - **No Special Requirements**: No Node.js needed in production
 
 The architecture prioritizes simplicity and compatibility while maintaining modern development practices and security standards.
+
+## Backup and Restoration System
+
+### Database Backup Scripts
+- **`scripts/quick_backup.php`** - Generates complete PostgreSQL backup with structure and data
+- **`scripts/backup_database.php`** - Advanced backup with detailed analysis and constraints
+- **`scripts/restore_database.php`** - Restores database from SQL backup files
+
+### GitHub Automation Scripts
+- **`scripts/quick_github.sh`** - Rapid Git commit and push for Linux/Mac/Replit
+- **`scripts/github_backup.sh`** - Comprehensive Git backup with verification
+- **`scripts/quick_github_backup.ps1`** - PowerShell script for Windows automation
+- **`scripts/secure_github_backup.ps1`** - Advanced PowerShell with branch management
+
+### Persistence Strategy
+- PostgreSQL database expires after 6 days in Replit environment
+- Complete restoration possible via SQL backup files
+- Admin credentials preserved: admin/admin123
+- Project synchronized with GitHub: https://github.com/evan-1702/trilingualshowcase
+
+### Session Recovery
+When returning to Replit after session termination:
+1. Database will be recreated automatically if expired
+2. Use `php scripts/restore_database.php [backup_file.sql]` to restore data
+3. Admin panel access maintained at `/paradise-management`
+4. All project files persist in GitHub repository
