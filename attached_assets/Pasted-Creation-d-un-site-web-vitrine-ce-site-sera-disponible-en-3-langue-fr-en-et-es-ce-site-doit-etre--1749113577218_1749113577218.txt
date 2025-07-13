@@ -1,0 +1,86 @@
+Creation d'un site web vitrine,ce site sera disponible en 3 langue fr, en et es.
+ce site doit etre moderne sur les tandard web actuel.
+La navigation doit etre simple et intuitive.
+le site est responsive et avant tout penser pour les téléphone mobiles. il doit rester ok sur un affichage desktop.
+
+charte graphique del'option A
+Élément	Couleur	Code HTML
+Fond principal	Beige clair / Ivoire	#F9F5EF
+Texte principal	Brun foncé	#4A3B31
+Accent (bouton / liens)	Rose poudré doux	#C9A79C
+Icônes / traits	Taupe moyen	#9E8C7F
+
+Usage	Nom de la police	Type	Lien Google Fonts
+Titres / logo	Quicksand	Sans-serif ronde, douce	Lien
+Texte courant	Nunito	Sans-serif confortable	Lien
+CTA / icônes	Cabin (optionnel)	Moderne mais chaleureux	Lien
+
+Le logo est en pice jointe.
+
+map du site : 
+page d'accueil
+page tarif
+page contact
+page chambre & service
+page reservez
+
+page d'accueil :
+contient le logo
+une description de notre activite de notre localisation, notre philosophie et nos valeurs
+une zone de 3 points avec icone pour indiquer nos services principaux
+un encart de presentation de la gerante
+un encart pour recuperer des photos instagram
+une zone pour les commentaires clients
+les liens vers les reseau sociaux
+une zone personalisabe depuis le backoffice pour des message personalisé (exemple : attention pensez à reserver pour la periode estivale dés maintenant, ou promotion pour les reservation early booking)
+
+exemple : mettre une maquette generer
+
+page chambres & services :
+cettepage presnete nos 4 chambres
+pour chaque chambre il y aura des photos à mettre en evidence
+un texte descriptif de l'ambiance de la chambre, sa superficie
+lerappel de notre philosophie (1 seule famille par chambre)
+une grille de tarif issue du backoffice
+un planning indiquant les jour disponible et déjà occupe, utiliser les informations correspondant a la page backoffice planning pour la chambre
+un bouton reservez des maintenants.
+
+Page contact: 
+zone avec les reseau sociaux
+encart de presentation de la gerante
+formulaire d'envoi d'email securisé (capcha ou tout autre solution)
+avec email obligatoire, nom obligatoire, prénom obligatoire, tel obligatoire, une zone de saisie de texte simple (html interdit ou caractères spéciaux)obligatoire
+nombre d'animaux zone de choix numerique obligaotire.
+Si le nombre d'animaux est superieur à 0 alors creer autant de ligne que le nombre indiqué
+chaque ligne contient les champs suivant : nom de l'animal (obligatoire), type de l'animal (obligatoire), commentaire (facultatif)
+un bouton envoyé.
+lors du clic sur le bouton envoyé, un message de remerciement s'affiche en indiquant une réponse rapide.
+
+page reserver :
+une zone remontrant les chambres en photos
+un forumalaire : 
+date de debut de sejour : à saisir avec ne aide calendrier obligatoire 
+date defin de sejour : à saisir avec une aide calendrier obligatoire
+si pas de chambre disponible sur la periode indique un message d'erreur que nous sommes malheureusement complet sur ces dates.
+nombre d'animaux : liste deroulante numerique de 1 à 5 obligatoire
+le nom, prenom, adresse complete, telephone, email tout obligatoire
+une preference de chambre : liste deroulante pour choisir la chambre (seule les chamre non occupé sur les date de debut et de fin sont selectionnable).
+si nombre d'animaux >0 alorspour chaque valeur creer une ligne avec : 
+- nom de l'naimal obligatoire
+- type de l'animal
+- sexe liste deroualnte (male male sterilisé femelle femelle sterilisé)
+- option à selection multiple que les services proposés
+- zone de commentaire info utile sur l'animal 
+
+cela envoit un mail avec l'ensemble des informations.
+un message de succes d'envoi du mail apprait avec les informations suivante : "merci pour votre demande de reservation, vous recevrez d'ici 24h un devis pour votre séjour.
+
+une zone de disclamer sera presente indiquant que la direction se reserve le droit de refuser une demande de réservation.
+
+le site backoffice : 
+acces restreind par login et mot de passe sécurisé
+une page tarif hebergement, permet de saisir un tableau de tarif du format suivant : 
+une page tarif service permet de saisir le tableau suivant
+une page planning : permettant de suivre l'occupation de chaque chambre, on peut saisir dans un tableau si la chambre est occuper sur une date ou une periode de date ou annuler une occupation, on voit un calendrier representant la situaiton globale d'ocucpation pour chauqe chambre.
+un page message accueil : zone de creation de texte html simple pour des messages a afficher sur la page d'accueil selon une plage de date de début et de fin.
+ 

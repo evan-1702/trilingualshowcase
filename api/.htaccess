@@ -1,0 +1,47 @@
+# Security headers
+Header always set X-Content-Type-Options nosniff
+Header always set X-Frame-Options DENY
+Header always set X-XSS-Protection "1; mode=block"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:;"
+
+# Hide sensitive files
+<Files ~ "^(\.env|\.htaccess|composer\.json|composer\.lock|vendor|config|database)">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Block direct access to PHP files except index.php
+<Files "*.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+<Files "index.php">
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+# URL Rewriting
+RewriteEngine On
+
+# Force HTTPS in production
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# API routing
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Security settings
+Options -Indexes -ExecCGI
+ServerSignature Off
+
+# Rate limiting (if mod_evasive is available)
+# DOSHashTableSize    4096
+# DOSPageCount        3
+# DOSSiteCount        50
+# DOSPageInterval     1
+# DOSSiteInterval     1
+# DOSBlockingPeriod   600

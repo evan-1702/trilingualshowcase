@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700&family=Cabin:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Custom pet hotel colors */
+  --primary-bg: 28 20% 97%; /* #F9F5EF */
+  --primary-text: 25 19% 25%; /* #4A3B31 */
+  --accent: 18 26% 70%; /* #C9A79C */
+  --secondary: 25 16% 56%; /* #9E8C7F */
+  
+  /* ShadCN default colors adapted */
+  --background: 28 20% 97%; /* #F9F5EF */
+  --foreground: 25 19% 25%; /* #4A3B31 */
+  --muted: 28 15% 90%;
+  --muted-foreground: 25 8% 45%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 25 19% 25%;
+  --card: 0 0% 100%;
+  --card-foreground: 25 19% 25%;
+  --border: 25 12% 85%;
+  --input: 25 12% 85%;
+  --primary: 18 26% 70%; /* #C9A79C */
+  --primary-foreground: 28 20% 97%;
+  --secondary: 28 15% 90%;
+  --secondary-foreground: 25 19% 25%;
+  --accent: 18 26% 70%;
+  --accent-foreground: 28 20% 97%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 25 19% 25%;
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: 25 19% 8%;
+  --foreground: 28 20% 97%;
+  --muted: 25 15% 15%;
+  --muted-foreground: 25 8% 60%;
+  --popover: 25 19% 8%;
+  --popover-foreground: 28 20% 97%;
+  --card: 25 19% 8%;
+  --card-foreground: 28 20% 97%;
+  --border: 25 15% 20%;
+  --input: 25 15% 20%;
+  --primary: 18 26% 70%;
+  --primary-foreground: 25 19% 8%;
+  --secondary: 25 15% 15%;
+  --secondary-foreground: 28 20% 97%;
+  --accent: 18 26% 70%;
+  --accent-foreground: 25 19% 8%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 25 8% 60%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  .font-heading {
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  .font-body {
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .font-cta {
+    font-family: 'Cabin', sans-serif;
+  }
+}
+
+@layer components {
+  .hero-gradient {
+    background: linear-gradient(135deg, rgba(249, 245, 239, 0.9) 0%, rgba(201, 167, 156, 0.8) 100%);
+  }
+  
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(249, 245, 239, 0.95);
+  }
+  
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(74, 59, 49, 0.15);
+  }
+
+  .fade-in {
+    animation: fadeIn 0.6s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from { 
+      opacity: 0; 
+      transform: translateY(20px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+
+  /* Rich text editor styling */
+  .ql-editor {
+    min-height: 120px;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .ql-toolbar {
+    border-top: 1px solid hsl(var(--border));
+    border-left: 1px solid hsl(var(--border));
+    border-right: 1px solid hsl(var(--border));
+    border-radius: 6px 6px 0 0;
+    background: hsl(var(--background));
+  }
+
+  .ql-container {
+    border-bottom: 1px solid hsl(var(--border));
+    border-left: 1px solid hsl(var(--border));
+    border-right: 1px solid hsl(var(--border));
+    border-radius: 0 0 6px 6px;
+    background: hsl(var(--background));
+  }
+
+  /* Prose styling for rich content display */
+  .prose {
+    color: inherit;
+  }
+
+  .prose h1 {
+    color: inherit;
+    font-weight: 700;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .prose h2 {
+    color: inherit;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .prose h3 {
+    color: inherit;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .prose p {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .prose strong {
+    font-weight: 600;
+    color: inherit;
+  }
+
+  .prose em {
+    font-style: italic;
+    color: inherit;
+  }
+
+  .prose u {
+    text-decoration: underline;
+    color: inherit;
+  }
+
+  .prose ol {
+    list-style-type: decimal;
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .prose ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .prose li {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .prose a {
+    color: hsl(var(--accent));
+    text-decoration: underline;
+  }
+
+  .prose a:hover {
+    color: hsl(var(--accent));
+    opacity: 0.8;
+  }
+
+  .prose img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin: 1rem 0;
+  }
+}
