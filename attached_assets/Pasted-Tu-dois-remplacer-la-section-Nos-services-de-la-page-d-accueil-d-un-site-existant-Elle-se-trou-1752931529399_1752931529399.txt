@@ -1,0 +1,50 @@
+Tu dois remplacer la section “Nos services” de la page d’accueil d’un site existant.  
+Elle se trouve directement sous la section Hero. Ne modifie aucune autre section.
+
+🎨 Fond : couleur principale du site (déjà définie dans la charte globale)
+
+📐 Contenu :
+
+- Titre : `Nos services`
+- Sous-titre : `Bienvenue chez nous... et chez eux ! Notre pension pour animaux est née d'un amour profond pour les animaux. Elle se veut un lieu unique, à taille humaine, alliant confort, espace, sécurité et jeux.`
+
+📦 6 zones d’information, en grille responsive (3 par ligne sur desktop, 1 par ligne sur mobile) :  
+Chaque bloc contient une icône, un titre, un sous-titre. Ne modifie **aucun texte**.
+
+1. ❤️ `Cadre familial et chaleureux`  
+   `Chaque pensionnaire est accueilli comme un membre de la famille dans un environnement à taille humaine.`
+
+2. 🏠 `Chambres privées`  
+   `Espaces privés pour que vos animaux ne soient jamais perturbés, avec tout le confort nécessaire.`
+
+3. 🛡️ `Sécurité et bien-être`  
+   `Environnement sécurisé avec surveillance attentive et soins spécifiques selon les besoins.`
+
+4. ⏰ `Flexibilité des séjours`  
+   `Que ce soit pour une courte absence ou un séjour prolongé, nous nous adaptons à vos besoins.`
+
+5. 🐾 `Attention personnalisée`  
+   `Chaque animal bénéficie d'une attention particulière respectant ses habitudes et son caractère.`
+
+6. 🩺 `Soins spécialisés`  
+   `Attention particulière aux animaux âgés et fragiles avec surveillance médicale adaptée.`
+
+🧾 Zone d’information pleine largeur (bloc séparé sous les 6 zones) :
+- Titre : `Un séjour serein pour vous comme pour eux`
+- Liste à puces :
+  - Plus serein, sans le stress d'être confronté à d'autres animaux inconnus
+  - Un espace calme, confortable, familier et stimulant
+  - Une attention accrue pour leur bien-être et leur santé
+  - Attentif aux besoins particuliers des animaux âgés et fragiles
+  - Respectueux de leurs habitudes et permettant d'apporter un bout de leur maison
+  - Respectueux de leurs régimes habituels avec leur alimentation
+
+🎯 2 boutons alignés (ou empilés sur mobile) :
+- `Réservez maintenant` → lien vers page réservation
+- `Découvrir nos chambres` → lien vers page des chambres/suites
+
+🧱 Contraintes :
+- Code responsive, clair, moderne
+- Style cohérent avec les autres sections (pastel, arrondi, espacé)
+- Utilise uniquement HTML + CSS
+- Donne uniquement le code correspondant à cette section. Rien d'autre.

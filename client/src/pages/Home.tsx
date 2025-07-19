@@ -75,43 +75,112 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-16 lg:py-24 bg-white">
+      <section className="py-16 lg:py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="font-heading font-bold text-3xl lg:text-4xl mb-6">{t('home.services.title')}</h2>
-            <p className="text-lg text-secondary max-w-2xl mx-auto">{t('home.services.subtitle')}</p>
+            <h2 className="font-heading font-bold text-3xl lg:text-4xl mb-6 text-foreground">Nos services</h2>
+            <p className="text-lg text-foreground/80 max-w-4xl mx-auto leading-relaxed">
+              Bienvenue chez nous... et chez eux ! Notre pension pour animaux est née d'un amour profond pour les animaux. Elle se veut un lieu unique, à taille humaine, alliant confort, espace, sécurité et jeux.
+            </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-            <Card className="text-center hover-lift bg-primary-bg/50 border-none">
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-12 mb-16">
+            <Card className="text-center hover-lift bg-white border border-border rounded-2xl shadow-sm">
               <CardContent className="p-8">
-                <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Home className="text-primary-bg text-2xl" />
-                </div>
-                <h3 className="font-heading font-semibold text-xl mb-4">{t('home.services.individual.title')}</h3>
-                <p className="text-secondary leading-relaxed">{t('home.services.individual.description')}</p>
+                <div className="text-4xl mb-4">❤️</div>
+                <h3 className="font-heading font-semibold text-xl mb-4 text-foreground">Cadre familial et chaleureux</h3>
+                <p className="text-secondary leading-relaxed">Chaque pensionnaire est accueilli comme un membre de la famille dans un environnement à taille humaine.</p>
               </CardContent>
             </Card>
             
-            <Card className="text-center hover-lift bg-primary-bg/50 border-none">
+            <Card className="text-center hover-lift bg-white border border-border rounded-2xl shadow-sm">
               <CardContent className="p-8">
-                <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-6">
-                  <UserCheck className="text-primary-bg text-2xl" />
-                </div>
-                <h3 className="font-heading font-semibold text-xl mb-4">{t('home.services.care.title')}</h3>
-                <p className="text-secondary leading-relaxed">{t('home.services.care.description')}</p>
+                <div className="text-4xl mb-4">🏠</div>
+                <h3 className="font-heading font-semibold text-xl mb-4 text-foreground">Chambres privées</h3>
+                <p className="text-secondary leading-relaxed">Espaces privés pour que vos animaux ne soient jamais perturbés, avec tout le confort nécessaire.</p>
               </CardContent>
             </Card>
             
-            <Card className="text-center hover-lift bg-primary-bg/50 border-none">
+            <Card className="text-center hover-lift bg-white border border-border rounded-2xl shadow-sm">
               <CardContent className="p-8">
-                <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Gamepad2 className="text-primary-bg text-2xl" />
-                </div>
-                <h3 className="font-heading font-semibold text-xl mb-4">{t('home.services.activities.title')}</h3>
-                <p className="text-secondary leading-relaxed">{t('home.services.activities.description')}</p>
+                <div className="text-4xl mb-4">🛡️</div>
+                <h3 className="font-heading font-semibold text-xl mb-4 text-foreground">Sécurité et bien-être</h3>
+                <p className="text-secondary leading-relaxed">Environnement sécurisé avec surveillance attentive et soins spécifiques selon les besoins.</p>
               </CardContent>
             </Card>
+
+            <Card className="text-center hover-lift bg-white border border-border rounded-2xl shadow-sm">
+              <CardContent className="p-8">
+                <div className="text-4xl mb-4">⏰</div>
+                <h3 className="font-heading font-semibold text-xl mb-4 text-foreground">Flexibilité des séjours</h3>
+                <p className="text-secondary leading-relaxed">Que ce soit pour une courte absence ou un séjour prolongé, nous nous adaptons à vos besoins.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center hover-lift bg-white border border-border rounded-2xl shadow-sm">
+              <CardContent className="p-8">
+                <div className="text-4xl mb-4">🐾</div>
+                <h3 className="font-heading font-semibold text-xl mb-4 text-foreground">Attention personnalisée</h3>
+                <p className="text-secondary leading-relaxed">Chaque animal bénéficie d'une attention particulière respectant ses habitudes et son caractère.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center hover-lift bg-white border border-border rounded-2xl shadow-sm">
+              <CardContent className="p-8">
+                <div className="text-4xl mb-4">🩺</div>
+                <h3 className="font-heading font-semibold text-xl mb-4 text-foreground">Soins spécialisés</h3>
+                <p className="text-secondary leading-relaxed">Attention particulière aux animaux âgés et fragiles avec surveillance médicale adaptée.</p>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Full width info section */}
+          <div className="bg-white border border-border rounded-2xl p-8 lg:p-12 mb-12 shadow-sm">
+            <h3 className="font-heading font-bold text-2xl lg:text-3xl mb-8 text-center text-foreground">Un séjour serein pour vous comme pour eux</h3>
+            <div className="grid md:grid-cols-2 gap-6 text-left">
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <span className="text-accent text-xl">•</span>
+                  <span className="text-foreground leading-relaxed">Plus serein, sans le stress d'être confronté à d'autres animaux inconnus</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-accent text-xl">•</span>
+                  <span className="text-foreground leading-relaxed">Un espace calme, confortable, familier et stimulant</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-accent text-xl">•</span>
+                  <span className="text-foreground leading-relaxed">Une attention accrue pour leur bien-être et leur santé</span>
+                </li>
+              </ul>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <span className="text-accent text-xl">•</span>
+                  <span className="text-foreground leading-relaxed">Attentif aux besoins particuliers des animaux âgés et fragiles</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-accent text-xl">•</span>
+                  <span className="text-foreground leading-relaxed">Respectueux de leurs habitudes et permettant d'apporter un bout de leur maison</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-accent text-xl">•</span>
+                  <span className="text-foreground leading-relaxed">Respectueux de leurs régimes habituels avec leur alimentation</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* CTA buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link href="/reservations">
+              <Button size="lg" className="bg-accent text-white hover:bg-accent/90 font-cta font-semibold text-lg rounded-full px-8 py-4 transform hover:scale-105 transition-all duration-300 shadow-lg min-w-[200px]">
+                Réservez maintenant
+              </Button>
+            </Link>
+            <Link href="/rooms">
+              <Button variant="outline" size="lg" className="border-2 border-accent text-accent hover:bg-accent hover:text-white font-cta font-semibold text-lg rounded-full px-8 py-4 transition-all duration-300 min-w-[200px]">
+                Découvrir nos chambres
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
