@@ -22,35 +22,52 @@ export default function HomePage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080" 
-            alt="Luxury pet hotel interior" 
-            className="w-full h-full object-cover"
+            src="https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080" 
+            alt="Chat et lapin dormant paisiblement" 
+            className="w-full h-full object-cover opacity-80"
           />
           <div className="absolute inset-0 hero-gradient"></div>
         </div>
         
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
-          <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl mb-6 leading-tight">
-            {t('home.hero.title').split(' ').map((word, index) => 
-              word === 'Luxe' || word === 'Luxury' || word === 'Lujo' ? (
-                <span key={index} className="text-accent">{word} </span>
-              ) : (
-                word + ' '
-              )
-            )}
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
+          <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl mb-6 leading-tight text-foreground">
+            Chatphir hôtel Nîmes
           </h1>
-          <p className="text-lg sm:text-xl lg:text-2xl mb-8 max-w-2xl mx-auto leading-relaxed text-primary-text/90">
-            {t('home.hero.subtitle')}
+          <p className="text-lg sm:text-xl lg:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed text-foreground/90">
+            Service de garde pour chats, lapins et NACs pensée pour le bien-être de nos poilus !
           </p>
+
+          {/* Info zones */}
+          <div className="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
+            <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/30">
+              <div className="text-3xl mb-3">❤️</div>
+              <h3 className="font-heading font-semibold text-lg text-foreground">Cadre familial et chaleureux</h3>
+            </div>
+            <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/30">
+              <div className="text-3xl mb-3">🛡️</div>
+              <h3 className="font-heading font-semibold text-lg text-foreground">Sécurité et confort</h3>
+            </div>
+            <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/30">
+              <div className="text-3xl mb-3">⭐</div>
+              <h3 className="font-heading font-semibold text-lg text-foreground">Attention personnalisée</h3>
+            </div>
+          </div>
+
+          {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link href="/reservations">
-              <Button size="lg" className="bg-accent text-primary-bg hover:bg-accent/90 font-cta font-semibold text-lg rounded-full px-8 py-4 transform hover:scale-105 transition-all duration-300 shadow-lg">
-                {t('home.hero.cta.reserve')}
+              <Button size="lg" className="bg-accent text-white hover:bg-accent/90 font-cta font-semibold text-lg rounded-full px-8 py-4 transform hover:scale-105 transition-all duration-300 shadow-lg min-w-[200px]">
+                Réservez maintenant
               </Button>
             </Link>
             <Link href="/rooms">
-              <Button variant="outline" size="lg" className="border-2 border-accent text-accent hover:bg-accent hover:text-primary-bg font-cta font-semibold text-lg rounded-full px-8 py-4 transition-all duration-300">
-                {t('home.hero.cta.discover')}
+              <Button variant="outline" size="lg" className="border-2 border-accent text-accent hover:bg-accent hover:text-white font-cta font-semibold text-lg rounded-full px-8 py-4 transition-all duration-300 min-w-[200px] bg-white/20 backdrop-blur-sm">
+                Découvrir nos chambres
+              </Button>
+            </Link>
+            <Link href="/pricing">
+              <Button variant="outline" size="lg" className="border-2 border-secondary text-secondary hover:bg-secondary hover:text-white font-cta font-semibold text-lg rounded-full px-8 py-4 transition-all duration-300 min-w-[200px] bg-white/20 backdrop-blur-sm">
+                Découvrir nos services
               </Button>
             </Link>
           </div>
