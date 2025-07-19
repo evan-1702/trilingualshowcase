@@ -6,6 +6,60 @@ import { Link } from "wouter";
 import Navigation from "@/components/Navigation";
 import { useLanguage } from "@/lib/i18n";
 import type { CustomMessage } from "@shared/schema";
+import { useState, useEffect } from "react";
+
+const RoomCarousel = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const images = [
+    "https://images.unsplash.com/photo-1574144611937-0df059b5ef3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    "https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    "https://images.unsplash.com/photo-1559190394-df5a28aab5c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    "https://images.unsplash.com/photo-1615751072497-5f5169febe17?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  return (
+    <div className="relative max-w-4xl mx-auto">
+      <div className="overflow-hidden rounded-2xl shadow-lg">
+        <div 
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+        >
+          {images.map((src, index) => (
+            <div key={index} className="w-full flex-shrink-0">
+              <img 
+                src={src}
+                alt={`Chambre ${index + 1}`}
+                className="w-full h-64 md:h-80 lg:h-96 object-cover"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="flex justify-center mt-4 space-x-2">
+        {images.map((_, index) => (
+          <div
+            key={index}
+            className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+              index === currentSlide ? 'bg-accent' : 'bg-accent/30'
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default function HomePage() {
   const { t } = useLanguage();
@@ -179,6 +233,35 @@ export default function HomePage() {
             <Link href="/rooms">
               <Button variant="outline" size="lg" className="border-2 border-accent text-accent hover:bg-accent hover:text-white font-cta font-semibold text-lg rounded-full px-8 py-4 transition-all duration-300 min-w-[200px]">
                 Découvrir nos chambres
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Nos chambres Section */}
+      <section className="py-16 lg:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="font-heading font-bold text-3xl lg:text-4xl mb-6 text-foreground">Nos chambres</h2>
+            <p className="text-lg text-foreground/80 max-w-4xl mx-auto leading-relaxed">
+              Chaque chambre a été pensée pour offrir le maximum de confort et de bien-être à vos compagnons, dans un environnement sécurisé et stimulant "comme à la maison".
+            </p>
+          </div>
+          
+          <div className="mb-12">
+            <RoomCarousel />
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link href="/reservations">
+              <Button size="lg" className="bg-accent text-white hover:bg-accent/90 font-cta font-semibold text-lg rounded-full px-8 py-4 transform hover:scale-105 transition-all duration-300 shadow-lg min-w-[200px]">
+                Réservez maintenant
+              </Button>
+            </Link>
+            <Link href="/rooms">
+              <Button variant="outline" size="lg" className="border-2 border-accent text-accent hover:bg-accent hover:text-white font-cta font-semibold text-lg rounded-full px-8 py-4 transition-all duration-300 min-w-[200px]">
+                En savoir plus
               </Button>
             </Link>
           </div>
